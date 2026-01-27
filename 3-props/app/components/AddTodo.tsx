@@ -12,8 +12,12 @@ export const AddTodo = (props: AddTodoProps) => {
   return (
     <form
       onSubmit={(e) => {
+        // Avbryt formulärets standardbeteende (ladda om sidan)
         e.preventDefault();
+        // Anropa funktion som finns i props-objektet
+        // Denna funktion har skickats hit från parent-komponenten
         props.saveTodo(userInput);
+        // Töm textrutan för att kunna mata in nästa todo
         setUserInput("");
       }}
       className="flex gap-4 items-center"
