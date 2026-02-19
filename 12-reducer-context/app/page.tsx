@@ -4,20 +4,28 @@ import { TodoApp } from "./components/todos/TodoApp";
 export default function Home() {
   // Skapa restaurant
   const createRestaurant = async () => {
-    fetch("https://school-restaurant-api.azurewebsites.net/restaurant/create", {
-      method: "POST",
-      body: JSON.stringify({
-        name: "My restaurant name",
-        address: {
-          street: "Drottninggatan 1",
-          zip: "110 10",
-          city: "Stockholm",
+    await fetch(
+      "https://school-restaurant-api.azurewebsites.net/restaurant/create",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name: "My restaurant name",
+          address: {
+            street: "Drottninggatan 1",
+            zip: "110 10",
+            city: "Stockholm",
+          },
+        }),
+        headers: {
+          "content-type": "application/json",
         },
-      }),
-      headers: {
-        "content-type": "application/json",
       },
-    });
+    );
+
+    await axios.post<T>(
+      "https://school-restaurant-api.azurewebsites.net/restaurant/create",
+      JSON.stringify({}),
+    );
   };
 
   const getBookings = async () => {
