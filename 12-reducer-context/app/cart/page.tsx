@@ -11,8 +11,8 @@ const products: Product[] = [
   { id: 3, name: "Basketboll", price: 200 },
 ];
 
-export const Cart = () => {
-  // "Räck upp handen" och ta tag i värdet från contextet med varukorgen
+const CartPage = () => {
+  // Använd vår reducer istället för state
   const { cart, dispatch } = useContext(CartContext);
 
   // Funktion för att räkna ut totalen
@@ -99,3 +99,5 @@ export const Cart = () => {
     </>
   );
 };
+
+export default CartPage;

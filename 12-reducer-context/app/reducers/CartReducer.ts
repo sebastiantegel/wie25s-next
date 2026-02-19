@@ -5,7 +5,7 @@ import type { CartItem } from "../models/CartItem";
 import { Product } from "../models/Product";
 
 /// Definiera en action med hjälp av type och payload
-interface IAction {
+export interface ICartAction {
   type: ActionType;
   payload: string;
 }
@@ -23,7 +23,7 @@ export enum ActionType {
 // och förändringen i form av action
 export const CartReducer = (
   cartItems: CartItem[],
-  action: IAction,
+  action: ICartAction,
 ): CartItem[] => {
   //   if (action.type === ActionType.ADDED) {
   //     const productToAdd: Product = JSON.parse(action.payload);

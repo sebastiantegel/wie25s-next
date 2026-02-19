@@ -1,5 +1,5 @@
 import { Cart } from "./components/Cart";
-import { TodoApp } from "./components/TodoApp";
+import { TodoApp } from "./components/todos/TodoApp";
 
 export default function Home() {
   return (
